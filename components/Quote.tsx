@@ -16,7 +16,7 @@ export default function Quote() {
           className="font-fraunces text-[6rem] leading-none text-accent/30 mb-2 select-none"
           aria-hidden
         >
-          "
+          &ldquo;
         </div>
 
         <blockquote
