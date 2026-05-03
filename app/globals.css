@@ -3,25 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0a0a0f;
+  --bg-2: #14141c;
+  --ink: #f4f1ea;
+  --ink-soft: #a8a59e;
+  --accent: #ff5722;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0f;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a0a0f;
+  color: #f4f1ea;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff5722;
+  border-radius: 2px;
+}
+
+@keyframes pulse-anim {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(0.65); }
+}
+
+.pulse-dot {
+  animation: pulse-anim 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes dash-flow {
+  to { stroke-dashoffset: -20; }
+}
+
+.dash-animated {
+  animation: dash-flow 1.2s linear infinite;
 }
